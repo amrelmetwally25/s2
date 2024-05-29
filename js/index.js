@@ -41,10 +41,12 @@ var quotes = [
 var lastGeneratedNumber = '';
 var arrNumber = [];
 function displayQuotes(){
-    
+    if(arrNumber.length == quotes.length){
+         arrNumber = [];
+    }
     do{
         var newGeneratedNumber = Math.floor(Math.random()*quotes.length) 
-    }while (newGeneratedNumber == lastGeneratedNumber ||arrNumber.includes(newGeneratedNumber));
+    }while (newGeneratedNumber == lastGeneratedNumber || arrNumber.includes(newGeneratedNumber));
     lastGeneratedNumber =  newGeneratedNumber;
     arrNumber.push(lastGeneratedNumber);
     console.log(arrNumber);
